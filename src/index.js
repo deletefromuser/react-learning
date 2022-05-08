@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Button } from 'react-bootstrap';
+import Display, { MyContext } from './components/Display';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 function Square(props) {
@@ -31,30 +34,27 @@ function canculateWinner(squares) {
     return null;
 }
 
+
+
 class Board extends React.Component {
 
     renderSquare(i) {
-        return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
+        return <Square key={i} value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
     }
 
     render() {
+        let rows = [];
+        for (let i = 0; i < 9; i += 3) {
+            rows.push(<div className="board-row" key={i}>
+                {this.renderSquare(i)}
+                {this.renderSquare(i + 1)}
+                {this.renderSquare(i + 2)}
+            </div>)
+        }
+
         return (
             <div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
+                {rows}
             </div>
         );
     }
@@ -68,6 +68,7 @@ class Game extends React.Component {
             current: {
             },
             index: 0,
+            msg: { name: "jerry", enemy: "tom" },
         };
     }
 
@@ -89,6 +90,12 @@ class Game extends React.Component {
         this.setState({ current: this.state.history[index], index: index });
     }
 
+    changeMsg() {
+        this.setState({
+            msg: { name: (Math.random() + 1).toString(36).substring(7), enemy: (Math.random() + 1).toString(36).substring(7) }
+        })
+    }
+
     render() {
         const current = this.state.history[this.state.index].squares.slice();
 
@@ -106,7 +113,7 @@ class Game extends React.Component {
         })
 
         return (
-            <div className="game">
+            <><div className="game">
                 <div className="game-board">
                     <Board squares={current} onClick={i => this.handleClick(i)} />
                 </div>
@@ -115,6 +122,33 @@ class Game extends React.Component {
                     <ol>{ols}</ol>
                 </div>
             </div>
+                <br />
+                <MyContext.Provider value={this.state.msg}>
+                    <code><pre>
+                        {
+                            `const MyContext = React.createContext({ name: "jerry", enemy: "tom" })
+...
+class Game extends React.Component {
+    ...
+    changeMsg() {
+        this.setState({
+            msg: { name: (Math.random() + 1).toString(36).substring(7), enemy: (Math.random() + 1).toString(36).substring(7) }
+        })
+    }
+    ...
+}`
+                        }
+                    </pre>
+                    </code>
+                    <Display></Display>
+                    <Button variant="primary" onClick={() => { this.changeMsg() }}>Primary</Button>
+                    <MyContext.Consumer>
+                        {value => <><br /><br />{JSON.stringify(value)}</>}
+                    </MyContext.Consumer>
+                </MyContext.Provider>
+
+            </>
+
         );
     }
 }

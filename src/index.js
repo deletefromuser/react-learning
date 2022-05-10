@@ -12,7 +12,12 @@ function Square(props) {
         </button>
     );
 }
-
+/**
+ * canculate the winner
+ * 
+ * @param  {} squares
+ * @return winner
+ */
 function canculateWinner(squares) {
     const lines = [
         [0, 1, 2],

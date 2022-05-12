@@ -7,6 +7,8 @@ import Bookkeeper from './Router/BookKeeper';
 import Expenses from './Router/Expenses';
 import Invoice from './Router/Invoice';
 import Invoices from "./Router/Invoices";
+import Todo from './Router/Todo';
+import Todos from './Router/Todos';
 import Game from './TutorialChess/Game';
 import Context from './TutorialOther/Context';
 
@@ -25,7 +27,18 @@ root.render(
             <Route path="router" element={<Bookkeeper />} >
                 <Route path="expenses" element={<Expenses />} />
                 <Route path="invoices" element={<Invoices />} >
+                    <Route
+                        index
+                        element={
+                            <main style={{ padding: "1rem" }}>
+                                <p>Select an invoice</p>
+                            </main>
+                        }
+                    />
                     <Route path=":invoiceId" element={<Invoice />} />
+                </Route>
+                <Route path="todos" element={<Todos />} >
+                    <Route path=":todoId" element={<Todo />} />
                 </Route>
                 <Route path="*"
                     element={

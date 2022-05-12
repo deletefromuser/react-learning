@@ -34,3 +34,32 @@ let invoices = [
 export function getInvoices() {
     return invoices;
 }
+
+export function getInvoice(number) {
+    return invoices.find(
+        (invoice) => invoice.number === number
+    );
+}
+
+export function deleteInvoice(number) {
+    invoices = invoices.filter(
+        (invoice) => invoice.number !== number
+    );
+}
+
+// {
+//     "userId": 1,
+//     "id": 1,
+//     "title": "delectus aut autem",
+//     "completed": false
+//   }
+export function getTodos() {
+    return fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json());
+}
+
+// let todos = fetch('https://jsonplaceholder.typicode.com/todos/1')
+//     .then(response => response.json());
+
+// todos.then(data => console.log(JSON.stringify(data)));
+// console.log("end");

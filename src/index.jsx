@@ -11,44 +11,67 @@ import Todo from './Router/Todo';
 import Todos from './Router/Todos';
 import Game from './TutorialChess/Game';
 import Context from './TutorialOther/Context';
+import FancyDiv from './TutorialOther/ForwardRef';
+import { Lifecycle } from './TutorialOther/Lifecycle';
+import Other from './TutorialOther/Other';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<>
-                <Game />
-                <hr className="my-3" />
-                <Context></Context>
-                <hr className="my-3" />
+    <React.StrictMode>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<>
+                    <Game />
+                    {/* <hr className="my-3" />
+                    <Context></Context>
+                    <hr className="my-3" /> */}
 
-                <Link to="/router">Bookkeeper - ReactRouter</Link>
-            </>} />
-            <Route path="router" element={<Bookkeeper />} >
-                <Route path="expenses" element={<Expenses />} />
-                <Route path="invoices" element={<Invoices />} >
-                    <Route
-                        index
+                    <hr className="my-3" />
+
+                    <Link to="/router">Bookkeeper - ReactRouter</Link>
+
+                    <hr className="my-3" />
+
+                    <Link to="/other">Tutorial Other</Link>
+                </>} />
+                <Route path="router" element={<Bookkeeper />} >
+                    <Route path="expenses" element={<Expenses />} />
+                    <Route path="invoices" element={<Invoices />} >
+                        <Route
+                            index
+                            element={
+                                <main style={{ padding: "1rem" }}>
+                                    <p>Select an invoice</p>
+                                </main>
+                            }
+                        />
+                        <Route path=":invoiceId" element={<Invoice />} />
+                    </Route>
+                    <Route path="todos" element={<Todos />} >
+                        <Route path=":todoId" element={<Todo />} />
+                    </Route>
+                    <Route path="*"
                         element={
                             <main style={{ padding: "1rem" }}>
-                                <p>Select an invoice</p>
+                                <p>There's nothing here!</p>
                             </main>
                         }
                     />
-                    <Route path=":invoiceId" element={<Invoice />} />
                 </Route>
-                <Route path="todos" element={<Todos />} >
-                    <Route path=":todoId" element={<Todo />} />
-                </Route>
-                <Route path="*"
-                    element={
-                        <main style={{ padding: "1rem" }}>
-                            <p>There's nothing here!</p>
-                        </main>
-                    }
-                />
-            </Route>
 
-        </Routes>
-    </BrowserRouter>
+                <Route path="other" element={<Other />} >
+                    <Route index element={
+                        <main style={{ padding: "1rem" }}>
+                            <p>Select an item</p>
+                        </main>
+                    } />
+                    <Route path="context" element={<Context />} />
+                    <Route path="forward-ref" element={<FancyDiv />} />
+                    <Route path="lifecycle" element={<Lifecycle />} />
+
+                </Route>
+
+            </Routes>
+        </BrowserRouter>
+    </React.StrictMode>
 );

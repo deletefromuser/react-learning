@@ -22,6 +22,7 @@ export default function Todos() {
                     padding: "1rem",
                 }}
             >
+                {todos.length === 0 && <p>Loading...</p>}
                 {todos.length > 0 && todos.map((todo) => (
                     <Link
                         style={{ display: "block", margin: "1rem 0" }}

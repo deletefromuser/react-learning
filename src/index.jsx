@@ -12,8 +12,10 @@ import Todos from './Router/Todos';
 import Game from './TutorialChess/Game';
 import Context from './TutorialOther/Context';
 import FancyDiv from './TutorialOther/ForwardRef';
-import { Lifecycle } from './TutorialOther/Lifecycle';
+import Lifecycle from './TutorialOther/Lifecycle';
+import { Calculator } from './TutorialOther/LiftStateUp';
 import Other from './TutorialOther/Other';
+import { LazyUsingComponent } from './TutorialOther/Reactlazy';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -68,7 +70,8 @@ root.render(
                     <Route path="context" element={<Context />} />
                     <Route path="forward-ref" element={<FancyDiv />} />
                     <Route path="lifecycle" element={<Lifecycle />} />
-
+                    <Route path="react-lazy" element={<LazyUsingComponent />} />
+                    <Route path="temperture-calculater" element={<Calculator />} />
                 </Route>
 
             </Routes>

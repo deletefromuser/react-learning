@@ -12,7 +12,8 @@ export default function Bookkeeper() {
             >
                 <Link to="invoices">Invoices😁</Link> |{" "}
                 <Link to="expenses">Expenses</Link> |{" "}
-                <Link to="todos">Todos</Link>
+                <Link to="todos">Todos</Link> |{" "}
+                <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />
         </div>

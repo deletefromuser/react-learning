@@ -13,7 +13,9 @@ export default function Other() {
                 <Link to="context">Context</Link> |{" "}
                 <Link to="forward-ref">Forward Ref</Link> |{" "}
                 <Link to="lifecycle">LifeCycle</Link> |{" "}
-                {/* <Link to="todos">Todos</Link> */}
+                <Link to="react-lazy">React Lazy</Link> |{" "}
+                <Link to="temperture-calculater">Temperture Calculater</Link> |{" "}
+                <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />
         </div>

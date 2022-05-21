@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Clock extends React.Component {
+class Lifecycle extends React.Component {
     constructor(props) {
         super(props);
         this.state = { date: new Date() };
@@ -24,4 +24,4 @@ class Clock extends React.Component {
     }
 }
 
-export { Clock as Lifecycle };
+export default Lifecycle;

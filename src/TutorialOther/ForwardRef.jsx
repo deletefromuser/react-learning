@@ -18,6 +18,7 @@ class FancyDiv extends React.Component {
     constructor(props) {
         super(props);
         this.ref = React.createRef();
+        this.changeColor = this.changeColor.bind(this);
     }
 
     changeColor() {

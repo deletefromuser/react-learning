@@ -11,11 +11,13 @@ import Todo from './Router/Todo';
 import Todos from './Router/Todos';
 import Game from './TutorialChess/Game';
 import Context from './TutorialOther/Context';
+import { ErrorBoundary } from './TutorialOther/ErrorBoundary';
 import FancyDiv from './TutorialOther/ForwardRef';
 import Lifecycle from './TutorialOther/Lifecycle';
 import { Calculator } from './TutorialOther/LiftStateUp';
 import Other from './TutorialOther/Other';
 import { LazyUsingComponent } from './TutorialOther/Reactlazy';
+import FilterableProductTable, { PRODUCTS } from './TutorialOther/ThinkingInReact';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -72,6 +74,8 @@ root.render(
                     <Route path="lifecycle" element={<Lifecycle />} />
                     <Route path="react-lazy" element={<LazyUsingComponent />} />
                     <Route path="temperture-calculater" element={<Calculator />} />
+                    <Route path="thinking-in-react" element={<FilterableProductTable products={PRODUCTS} />} />
+                    <Route path="error-boundary" element={<ErrorBoundary><FilterableProductTable /></ErrorBoundary>} />
                 </Route>
 
             </Routes>

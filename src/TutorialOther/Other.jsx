@@ -15,6 +15,8 @@ export default function Other() {
                 <Link to="lifecycle">LifeCycle</Link> |{" "}
                 <Link to="react-lazy">React Lazy</Link> |{" "}
                 <Link to="temperture-calculater">Temperture Calculater</Link> |{" "}
+                <Link to="thinking-in-react">Thinking in React</Link> |{" "}
+                <Link to="error-boundary">Error Boundary</Link> |{" "}
                 <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />

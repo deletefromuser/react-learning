@@ -13,6 +13,7 @@ import Game from './TutorialChess/Game';
 import Context from './TutorialOther/Context';
 import { ErrorBoundary } from './TutorialOther/ErrorBoundary';
 import FancyDiv from './TutorialOther/ForwardRef';
+import HOC from './TutorialOther/Hoc';
 import Lifecycle from './TutorialOther/Lifecycle';
 import { Calculator } from './TutorialOther/LiftStateUp';
 import Other from './TutorialOther/Other';
@@ -76,6 +77,7 @@ root.render(
                     <Route path="temperture-calculater" element={<Calculator />} />
                     <Route path="thinking-in-react" element={<FilterableProductTable products={PRODUCTS} />} />
                     <Route path="error-boundary" element={<ErrorBoundary><FilterableProductTable /></ErrorBoundary>} />
+                    <Route path="hoc" element={<HOC />} />
                 </Route>
 
             </Routes>

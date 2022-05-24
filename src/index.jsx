@@ -17,6 +17,7 @@ import HOC from './TutorialOther/Hoc';
 import Lifecycle from './TutorialOther/Lifecycle';
 import { Calculator } from './TutorialOther/LiftStateUp';
 import Other from './TutorialOther/Other';
+import Portal from './TutorialOther/Portal';
 import { LazyUsingComponent } from './TutorialOther/Reactlazy';
 import FilterableProductTable, { PRODUCTS } from './TutorialOther/ThinkingInReact';
 
@@ -78,6 +79,7 @@ root.render(
                     <Route path="thinking-in-react" element={<FilterableProductTable products={PRODUCTS} />} />
                     <Route path="error-boundary" element={<ErrorBoundary><FilterableProductTable /></ErrorBoundary>} />
                     <Route path="hoc" element={<HOC />} />
+                    <Route path="portal" element={<Portal />} />
                 </Route>
 
             </Routes>

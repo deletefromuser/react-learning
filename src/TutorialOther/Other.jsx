@@ -18,6 +18,7 @@ export default function Other() {
                 <Link to="thinking-in-react">Thinking in React</Link> |{" "}
                 <Link to="error-boundary">Error Boundary</Link> |{" "}
                 <Link to="hoc">Higher-Order Components</Link> |{" "}
+                <Link to="portal">Portal</Link> |{" "}
                 <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />

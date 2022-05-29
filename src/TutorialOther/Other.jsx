@@ -19,6 +19,7 @@ export default function Other() {
                 <Link to="error-boundary">Error Boundary</Link> |{" "}
                 <Link to="hoc">Higher-Order Components</Link> |{" "}
                 <Link to="portal">Portal</Link> |{" "}
+                <Link to="profiler">Profiler</Link> |{" "}
                 <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />

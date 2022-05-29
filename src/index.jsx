@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, { Profiler } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './index.css';
@@ -18,6 +18,7 @@ import Lifecycle from './TutorialOther/Lifecycle';
 import { Calculator } from './TutorialOther/LiftStateUp';
 import Other from './TutorialOther/Other';
 import Portal from './TutorialOther/Portal';
+import { onRenderCallback } from './TutorialOther/Profiler';
 import { LazyUsingComponent } from './TutorialOther/Reactlazy';
 import FilterableProductTable, { PRODUCTS } from './TutorialOther/ThinkingInReact';
 
@@ -80,6 +81,8 @@ root.render(
                     <Route path="error-boundary" element={<ErrorBoundary><FilterableProductTable /></ErrorBoundary>} />
                     <Route path="hoc" element={<HOC />} />
                     <Route path="portal" element={<Portal />} />
+                    <Route path="profiler" element={<Profiler id="Panel" onRender={onRenderCallback}><HOC /></Profiler>} />
+
                 </Route>
 
             </Routes>

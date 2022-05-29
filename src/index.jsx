@@ -21,6 +21,7 @@ import Portal from './TutorialOther/Portal';
 import { onRenderCallback } from './TutorialOther/Profiler';
 import { LazyUsingComponent } from './TutorialOther/Reactlazy';
 import FilterableProductTable, { PRODUCTS } from './TutorialOther/ThinkingInReact';
+import Ref from './TutorialOther/Ref';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -82,6 +83,7 @@ root.render(
                     <Route path="hoc" element={<HOC />} />
                     <Route path="portal" element={<Portal />} />
                     <Route path="profiler" element={<Profiler id="Panel" onRender={onRenderCallback}><HOC /></Profiler>} />
+                    <Route path="ref" element={<Ref />} />
 
                 </Route>
 

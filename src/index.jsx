@@ -24,6 +24,7 @@ import FilterableProductTable, { PRODUCTS } from './TutorialOther/ThinkingInReac
 import Ref from './TutorialOther/Ref';
 import RenderProps from './TutorialOther/RenderProps';
 import { Uncontrolled } from './TutorialOther/Uncontrolled';
+import { WebComponent } from './TutorialOther/WebComponent';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -88,6 +89,7 @@ root.render(
                     <Route path="ref" element={<Ref />} />
                     <Route path="render-props" element={<RenderProps />} />
                     <Route path="uncontrolled" element={<Uncontrolled />} />
+                    <Route path="web-component" element={<WebComponent />} />
 
                 </Route>
 

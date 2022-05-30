@@ -23,6 +23,7 @@ import { LazyUsingComponent } from './TutorialOther/Reactlazy';
 import FilterableProductTable, { PRODUCTS } from './TutorialOther/ThinkingInReact';
 import Ref from './TutorialOther/Ref';
 import RenderProps from './TutorialOther/RenderProps';
+import { Uncontrolled } from './TutorialOther/Uncontrolled';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -86,6 +87,7 @@ root.render(
                     <Route path="profiler" element={<Profiler id="Panel" onRender={onRenderCallback}><HOC /></Profiler>} />
                     <Route path="ref" element={<Ref />} />
                     <Route path="render-props" element={<RenderProps />} />
+                    <Route path="uncontrolled" element={<Uncontrolled />} />
 
                 </Route>
 

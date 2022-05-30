@@ -25,6 +25,7 @@ export default function Other() {
                 <Link to="profiler">Profiler</Link>
                 <Link to="ref">Ref</Link>
                 <Link to="render-props">Render Props</Link>
+                <Link to="uncontrolled">Uncontrolled Component</Link>
                 <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />

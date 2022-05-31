@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`result 1`] = `
+<div
+  className="d-flex flex-row"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;
+
+exports[`result 2`] = `
+<div
+  className="d-flex flex-row"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;

@@ -23,7 +23,7 @@ function tryConvert(temperature, convert) {
     return rounded.toString();
 }
 
-function BoilingVerdict(props) {
+export function BoilingVerdict(props) {
     if (props.celsius >= 100) {
         return <p>The water would boil.</p>;
     }

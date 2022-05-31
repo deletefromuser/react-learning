@@ -1,4 +1,5 @@
-import renderer, { act } from 'react-test-renderer';
+import renderer from 'react-test-renderer';
+import { act } from 'react-dom/test-utils';
 import ReactDOM from 'react-dom/client';
 import HOC from './Hoc';
 import { findByAltText, getByText, screen, waitForElementToBeRemoved } from '@testing-library/react';
@@ -58,21 +59,30 @@ async function mockFetch(url) {
 }
 
 it('result', async () => {
+    // TODO test useEffect
     const component = renderer.create(
         <HOC></HOC>
     );
+
+    // const component = act(() => {
+    //     ReactDOM.createRoot(container).render(<HOC />);
+    // });
+
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
     // jest.advanceTimersByTime(1000);
     // expect(tree).toMatchSnapshot();
+    console.log(tree);
 
-    act(() => {
-        ReactDOM.createRoot(container).render(<HOC />);
-    });
+    // const hoc = act(() => {
+    //     ReactDOM.createRoot(container).render(<HOC />);
+    // });
+
+    // console.log(hoc.JSON);
 
     // expect(container.querySelector('div.m-3 p:first-child').textContent).toMatch(/Leanne Graham/);
-    const div = await screen.findAllByText('Name:');
+    const div = await screen.queryAllByRole('span');
     expect(div).toBeInTheDocument();
 
 });

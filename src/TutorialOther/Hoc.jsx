@@ -5,7 +5,7 @@ export const UserCard = props => {
     return (
         <div className="m-3">
             <p>
-                <b>Name:</b> {props.name}
+                <b>Name:</b> <span>{props.name}</span>
             </p>
             <p>
                 <b>Email:</b> {props.email}

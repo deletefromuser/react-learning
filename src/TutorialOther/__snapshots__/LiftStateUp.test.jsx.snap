@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BoilingVerdict boils 1`] = `
+<p>
+  The water would not boil.
+</p>
+`;
+
+exports[`BoilingVerdict boils 2`] = `
+<p>
+  The water would boil.
+</p>
+`;

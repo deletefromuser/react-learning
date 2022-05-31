@@ -1,8 +1,7 @@
-import renderer from 'react-test-renderer';
-import { act } from 'react-dom/test-utils';
-import ReactDOM from 'react-dom/client';
+import { act, render, screen } from '@testing-library/react';
+import { createRoot } from 'react-dom/client';
+import '@testing-library/jest-dom'
 import HOC from './Hoc';
-import { findByAltText, getByText, screen, waitForElementToBeRemoved } from '@testing-library/react';
 
 let container;
 
@@ -58,31 +57,17 @@ async function mockFetch(url) {
     }
 }
 
-it('result', async () => {
-    // TODO test useEffect
-    const component = renderer.create(
-        <HOC></HOC>
-    );
+it('test useEffect', async () => {
+    const root = createRoot(container);
+    await act(async () => {
+        root.render(<HOC />);
+    });
 
-    // const component = act(() => {
-    //     ReactDOM.createRoot(container).render(<HOC />);
-    // });
+    expect(screen.getAllByText('Leanne Graham').pop()).toBeInTheDocument();
+});
 
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+it('test jest dom findby', async () => {
+    render(<HOC />);
 
-    // jest.advanceTimersByTime(1000);
-    // expect(tree).toMatchSnapshot();
-    console.log(tree);
-
-    // const hoc = act(() => {
-    //     ReactDOM.createRoot(container).render(<HOC />);
-    // });
-
-    // console.log(hoc.JSON);
-
-    // expect(container.querySelector('div.m-3 p:first-child').textContent).toMatch(/Leanne Graham/);
-    const div = await screen.queryAllByRole('span');
-    expect(div).toBeInTheDocument();
-
+    expect((await screen.findAllByText('Leanne Graham')).pop()).toBeInTheDocument();
 });

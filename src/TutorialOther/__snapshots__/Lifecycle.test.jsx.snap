@@ -51,3 +51,29 @@ exports[`result 4`] = `
   </h2>
 </div>
 `;
+
+exports[`test use act 1`] = `
+<div>
+  <h1>
+    Hello, world!
+  </h1>
+  <h2>
+    It is 
+    8:05:00 AM
+    .
+  </h2>
+</div>
+`;
+
+exports[`test use act 2`] = `
+<div>
+  <h1>
+    Hello, world!
+  </h1>
+  <h2>
+    It is 
+    8:05:05 AM
+    .
+  </h2>
+</div>
+`;

@@ -51,3 +51,27 @@ it('result', () => {
     expect(root.toJSON()).toMatchSnapshot();
 
 });
+
+it('test use act', () => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('2019-01-01T00:05:00.000Z'));
+    // render the component
+    let root;
+    act(() => {
+        root = renderer.create(<Lifecycle />)
+    });
+
+    // make assertions on root 
+    expect(root.toJSON()).toMatchSnapshot();
+
+    // update with some different props
+    act(() => {
+        jest.advanceTimersByTime(5000);
+        root.update(<Lifecycle />);
+    })
+
+    // make assertions on root 
+    expect(root.toJSON()).toMatchSnapshot();
+
+
+});

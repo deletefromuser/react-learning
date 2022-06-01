@@ -25,6 +25,7 @@ import Ref from './TutorialOther/Ref';
 import RenderProps from './TutorialOther/RenderProps';
 import { Uncontrolled } from './TutorialOther/Uncontrolled';
 import { WebComponent } from './TutorialOther/WebComponent';
+import UseHook from './TutorialOther/UseHook';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -90,6 +91,7 @@ root.render(
                     <Route path="render-props" element={<RenderProps />} />
                     <Route path="uncontrolled" element={<Uncontrolled />} />
                     <Route path="web-component" element={<WebComponent />} />
+                    <Route path="use-hook" element={<UseHook />} />
 
                 </Route>
 

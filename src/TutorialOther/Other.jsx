@@ -27,6 +27,7 @@ export default function Other() {
                 <Link to="render-props">Render Props</Link>
                 <Link to="uncontrolled">Uncontrolled Component</Link>
                 <Link to="web-component">Web Component</Link>
+                <Link to="use-hook">Use Hook</Link>
                 <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />

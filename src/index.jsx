@@ -26,6 +26,7 @@ import RenderProps from './TutorialOther/RenderProps';
 import { Uncontrolled } from './TutorialOther/Uncontrolled';
 import { WebComponent } from './TutorialOther/WebComponent';
 import UseHook from './TutorialOther/UseHook';
+import UseTodos from './TutorialOther/Todos';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -92,7 +93,9 @@ root.render(
                     <Route path="uncontrolled" element={<Uncontrolled />} />
                     <Route path="web-component" element={<WebComponent />} />
                     <Route path="use-hook" element={<UseHook />} />
-
+                    <Route path="use-custom-hook" element={<UseTodos />} >
+                        <Route path=":todoId" element={<Todo />} />
+                    </Route>
                 </Route>
 
             </Routes>

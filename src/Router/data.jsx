@@ -58,6 +58,11 @@ export function getTodos() {
         .then(response => response.json());
 }
 
+export function getTodo(id) {
+    return fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(response => response.json());
+}
+
 
 
 // let todos = fetch('https://jsonplaceholder.typicode.com/todos/1')

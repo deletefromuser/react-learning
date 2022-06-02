@@ -27,6 +27,7 @@ import { Uncontrolled } from './TutorialOther/Uncontrolled';
 import { WebComponent } from './TutorialOther/WebComponent';
 import UseHook from './TutorialOther/UseHook';
 import UseTodos from './TutorialOther/Todos';
+import { Reducer } from './TutorialOther/Reducer';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -96,6 +97,7 @@ root.render(
                     <Route path="use-custom-hook" element={<UseTodos />} >
                         <Route path=":todoId" element={<Todo />} />
                     </Route>
+                    <Route path="use-reducer" element={<Reducer initialCount={0} />} />
                 </Route>
 
             </Routes>

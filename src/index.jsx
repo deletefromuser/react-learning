@@ -28,6 +28,8 @@ import { WebComponent } from './TutorialOther/WebComponent';
 import UseHook from './TutorialOther/UseHook';
 import UseTodos from './TutorialOther/Todos';
 import { Reducer } from './TutorialOther/Reducer';
+import { UseMemo } from './TutorialOther/UseMemo';
+import UseCallback from './TutorialOther/useCallback';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -98,6 +100,9 @@ root.render(
                         <Route path=":todoId" element={<Todo />} />
                     </Route>
                     <Route path="use-reducer" element={<Reducer initialCount={0} />} />
+                    <Route path="use-memo" element={<UseMemo />} />
+                    <Route path="use-callback" element={<UseCallback />} />
+
                 </Route>
 
             </Routes>

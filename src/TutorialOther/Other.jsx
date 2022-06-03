@@ -30,6 +30,8 @@ export default function Other() {
                 <Link to="use-hook">Use Hook</Link>
                 <Link to="use-custom-hook">Use Custom Hook</Link>
                 <Link to="use-reducer">Use Reducer Hook</Link>
+                <Link to="use-memo">Use Memo Hook</Link>
+                <Link to="use-callback">Use Callback Hook</Link>
                 <Link to="/">{"<"}back</Link>
             </nav>
             <Outlet />
